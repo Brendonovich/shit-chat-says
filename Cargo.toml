@@ -1,0 +1,26 @@
+[package]
+name = "shit-chat-says"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+members = ["./", "./prisma"]
+resolver = "2"
+
+[dependencies]
+prisma-client-rust = { git = "https://github.com/Brendonovich/prisma-client-rust", rev = "a0ede73f4a6a950a64d8a3dc01f6dbb332de36af", features = [
+  "rspc",
+  "sqlite",
+], default-features = false }
+serde = "1.0.145"
+tokio = { version = "1.21.1", features = ["macros", "full"] }
+rspc = { version = "0.0.5", features = ["axum"] }
+irc = "0.15.0"
+futures = "0.3.24"
+twitchchat = { version = "0.14.8", features = ["async", "tokio-util", "tokio"] }
+dotenv = "0.15.0"
+twitch-irc = "4.1.0"
+axum = "0.5.16"
+tower-http = { version = "0.3.4", features = ["cors"] }

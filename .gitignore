@@ -1,0 +1,6 @@
+/target
+/node_modules
+prisma.rs
+.DS_Store
+.env
+dev.db
